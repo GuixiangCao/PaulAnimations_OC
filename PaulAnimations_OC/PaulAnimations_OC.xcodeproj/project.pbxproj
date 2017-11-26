@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA523C341FCAE81E00CFB065 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C331FCAE81E00CFB065 /* CustomViewController.m */; };
+		DA523C381FCAF2EB00CFB065 /* BaseCustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C371FCAF2EB00CFB065 /* BaseCustomNavigationController.m */; };
+		DA523C3C1FCAF41600CFB065 /* BaseCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C3B1FCAF41600CFB065 /* BaseCustomViewController.m */; };
+		DA523C401FCAF77700CFB065 /* ShowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C3F1FCAF77700CFB065 /* ShowLoadingView.m */; };
+		DA523C431FCAFD6700CFB065 /* ControllerBaseViewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C421FCAFD6700CFB065 /* ControllerBaseViewConfig.m */; };
 		DA5A46561FBC2FFB00599C71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A46551FBC2FFB00599C71 /* main.m */; };
 		DA5A46591FBC2FFC00599C71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A46581FBC2FFC00599C71 /* AppDelegate.m */; };
 		DA5A465C1FBC2FFC00599C71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A465B1FBC2FFC00599C71 /* ViewController.m */; };
@@ -35,6 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA523C321FCAE81E00CFB065 /* CustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		DA523C331FCAE81E00CFB065 /* CustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		DA523C361FCAF2EB00CFB065 /* BaseCustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCustomNavigationController.h; sourceTree = "<group>"; };
+		DA523C371FCAF2EB00CFB065 /* BaseCustomNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCustomNavigationController.m; sourceTree = "<group>"; };
+		DA523C3A1FCAF41600CFB065 /* BaseCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCustomViewController.h; sourceTree = "<group>"; };
+		DA523C3B1FCAF41600CFB065 /* BaseCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCustomViewController.m; sourceTree = "<group>"; };
+		DA523C3E1FCAF77700CFB065 /* ShowLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowLoadingView.h; sourceTree = "<group>"; };
+		DA523C3F1FCAF77700CFB065 /* ShowLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowLoadingView.m; sourceTree = "<group>"; };
+		DA523C411FCAFD6700CFB065 /* ControllerBaseViewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerBaseViewConfig.h; sourceTree = "<group>"; };
+		DA523C421FCAFD6700CFB065 /* ControllerBaseViewConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllerBaseViewConfig.m; sourceTree = "<group>"; };
 		DA5A46511FBC2FFB00599C71 /* PaulAnimations_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulAnimations_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5A46551FBC2FFB00599C71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA5A46571FBC2FFB00599C71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +93,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA523C2B1FCAE66000CFB065 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DA523C2C1FCAE66000CFB065 /* General-Tools */,
+				DA523C2D1FCAE66000CFB065 /* AbstractBaseClass */,
+				DA523C2E1FCAE66000CFB065 /* UI-Component */,
+				DA523C2F1FCAE66000CFB065 /* Controllers */,
+				DA523C301FCAE66000CFB065 /* RootController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DA523C2C1FCAE66000CFB065 /* General-Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "General-Tools";
+			sourceTree = "<group>";
+		};
+		DA523C2D1FCAE66000CFB065 /* AbstractBaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				DA523C351FCAF2DF00CFB065 /* CustomNavController */,
+				DA523C311FCAE6DD00CFB065 /* CustomControllers */,
+			);
+			path = AbstractBaseClass;
+			sourceTree = "<group>";
+		};
+		DA523C2E1FCAE66000CFB065 /* UI-Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UI-Component";
+			sourceTree = "<group>";
+		};
+		DA523C2F1FCAE66000CFB065 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA523C301FCAE66000CFB065 /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RootController;
+			sourceTree = "<group>";
+		};
+		DA523C311FCAE6DD00CFB065 /* CustomControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA523C3D1FCAF70B00CFB065 /* BaseCustomViewController - Manual layout */,
+				DA523C391FCAF3DB00CFB065 /* BaseCustomViewController */,
+				DA523C321FCAE81E00CFB065 /* CustomViewController.h */,
+				DA523C331FCAE81E00CFB065 /* CustomViewController.m */,
+			);
+			path = CustomControllers;
+			sourceTree = "<group>";
+		};
+		DA523C351FCAF2DF00CFB065 /* CustomNavController */ = {
+			isa = PBXGroup;
+			children = (
+				DA523C361FCAF2EB00CFB065 /* BaseCustomNavigationController.h */,
+				DA523C371FCAF2EB00CFB065 /* BaseCustomNavigationController.m */,
+			);
+			path = CustomNavController;
+			sourceTree = "<group>";
+		};
+		DA523C391FCAF3DB00CFB065 /* BaseCustomViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA523C3A1FCAF41600CFB065 /* BaseCustomViewController.h */,
+				DA523C3B1FCAF41600CFB065 /* BaseCustomViewController.m */,
+			);
+			path = BaseCustomViewController;
+			sourceTree = "<group>";
+		};
+		DA523C3D1FCAF70B00CFB065 /* BaseCustomViewController - Manual layout */ = {
+			isa = PBXGroup;
+			children = (
+				DA523C3E1FCAF77700CFB065 /* ShowLoadingView.h */,
+				DA523C3F1FCAF77700CFB065 /* ShowLoadingView.m */,
+				DA523C411FCAFD6700CFB065 /* ControllerBaseViewConfig.h */,
+				DA523C421FCAFD6700CFB065 /* ControllerBaseViewConfig.m */,
+			);
+			path = "BaseCustomViewController - Manual layout";
+			sourceTree = "<group>";
+		};
 		DA5A46481FBC2FFB00599C71 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +205,7 @@
 		DA5A46531FBC2FFB00599C71 /* PaulAnimations_OC */ = {
 			isa = PBXGroup;
 			children = (
+				DA523C2B1FCAE66000CFB065 /* Classes */,
 				DA5A46571FBC2FFB00599C71 /* AppDelegate.h */,
 				DA5A46581FBC2FFC00599C71 /* AppDelegate.m */,
 				DA5A465A1FBC2FFC00599C71 /* ViewController.h */,
@@ -275,7 +380,12 @@
 			files = (
 				DA5A465C1FBC2FFC00599C71 /* ViewController.m in Sources */,
 				DA5A46591FBC2FFC00599C71 /* AppDelegate.m in Sources */,
+				DA523C381FCAF2EB00CFB065 /* BaseCustomNavigationController.m in Sources */,
 				DA5A46561FBC2FFB00599C71 /* main.m in Sources */,
+				DA523C3C1FCAF41600CFB065 /* BaseCustomViewController.m in Sources */,
+				DA523C431FCAFD6700CFB065 /* ControllerBaseViewConfig.m in Sources */,
+				DA523C341FCAE81E00CFB065 /* CustomViewController.m in Sources */,
+				DA523C401FCAF77700CFB065 /* ShowLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A66HNYC77P;
 				INFOPLIST_FILE = PaulAnimations_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wewe.PaulAnimations-OC";
@@ -454,6 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A66HNYC77P;
 				INFOPLIST_FILE = PaulAnimations_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wewe.PaulAnimations-OC";
