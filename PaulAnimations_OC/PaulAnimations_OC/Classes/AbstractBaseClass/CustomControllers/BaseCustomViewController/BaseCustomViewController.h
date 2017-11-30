@@ -22,6 +22,7 @@ extern NSString * const backgroundViewId;
 @property (nonatomic,strong) ShowLoadingView *loadingAreaView;
 @property (nonatomic,strong) UIView          *titleView;
 @property (nonatomic,strong) UIView          *contentView;
+@property (nonatomic,strong) UIView          *backgroundView;
 
 #pragma mark - Overwrite by subclass
 - (void)makeViewsConfig:(NSMutableDictionary <NSString *, ControllerBaseViewConfig *> *)viewsConfig;

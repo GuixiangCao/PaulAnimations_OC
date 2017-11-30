@@ -14,4 +14,12 @@
 
 @implementation BaseCustomNavigationController
 
+-(instancetype)initWithRootViewController:(BaseCustomViewController *)rootViewController setNavigationBarHidden:(BOOL)hidden{
+    
+    BaseCustomNavigationController *nav = [[[self class] alloc]initWithRootViewController:rootViewController];
+    [nav setNavigationBarHidden:hidden animated:false];
+    
+    return nav;
+}
+
 @end

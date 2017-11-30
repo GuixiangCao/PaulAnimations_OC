@@ -27,6 +27,8 @@ NSString * const backgroundViewId  = @"backgroundViewId";
     
     self.automaticallyAdjustsScrollViewInsets = false;
     [self initViewConfigs];
+    [self makeViewsConfig:self.viewConfigs];
+    
 }
 
 -(void)initViewConfigs{
@@ -44,8 +46,95 @@ NSString * const backgroundViewId  = @"backgroundViewId";
         self.viewConfigs[backgroundViewId] = config;
         
     }
+    
+    //contentView config
+    {
+        ControllerBaseViewConfig *config   = [ControllerBaseViewConfig new];
+        config.exist                       = true;
+        config.backgroundColor             = [UIColor clearColor];
+        config.frame                       = CGRectMake(0, 64, width, height - 64);
+        self.viewConfigs[contentViewId]    = config;
+    }
+    
+    // titleView config.
+    {
+        ControllerBaseViewConfig *config = [ControllerBaseViewConfig new];
+        config.exist                     = YES;
+        config.frame                     = CGRectMake(0, 0, width, 64.f);
+        config.backgroundColor           = [UIColor clearColor];
+        self.viewConfigs[titleViewId]    = config;
+    }
+    
+    // loadingAreaView config.
+    {
+        ControllerBaseViewConfig *config    = [ControllerBaseViewConfig new];
+        config.exist                        = YES;
+        config.frame                        = CGRectMake(0, 64, width, height - 64.f);
+        config.backgroundColor              = [UIColor clearColor];
+        self.viewConfigs[loadingAreaViewId] = config;
+    }
+    
+    // windowAreaView config.
+    {
+        ControllerBaseViewConfig *config   = [ControllerBaseViewConfig new];
+        config.exist                       = YES;
+        config.frame                       = CGRectMake(0, 0, width, height);
+        config.backgroundColor             = [UIColor clearColor];
+        self.viewConfigs[windowAreaViewId] = config;
+    }
 }
 
+-(void)buildConfigViews{
+    //backgroundView
+    {
+        ControllerBaseViewConfig *config = self.viewConfigs[backgroundViewId];
+        if (config && config.exist) {
+            UIView *view = [[UIView alloc]initWithFrame:config.frame];
+            [self.view addSubview: view];
+            self.backgroundView = view;
+        }
+    }
+    
+    //contentView
+    {
+        ControllerBaseViewConfig *config = self.viewConfigs[contentViewId];
+        if (config && config.exist) {
+            UIView *view     = [[UIView alloc]initWithFrame:config.frame];
+            self.contentView = view;
+            [self.view addSubview:self.contentView];
+        }
+    }
+    
+    //titleView
+    {
+        ControllerBaseViewConfig *config = self.viewConfigs[titleViewId];
+        if (config && config.exist) {
+            UIView *view   = [[UIView alloc]initWithFrame:config.frame];
+            self.titleView = view;
+            [self.view addSubview:view];
+        }
+    }
+    
+    //loadingAreaView
+    {
+        ControllerBaseViewConfig *config = self.viewConfigs[loadingAreaViewId];
+        if (config && config.exist) {
+            ShowLoadingView *view         = [[ShowLoadingView alloc]initWithFrame:config.frame];
+            self.loadingAreaView = view;
+            [self.view addSubview:view];
+        }
+    }
+    
+    //windowAreaView
+    {
+        ControllerBaseViewConfig *config = self.viewConfigs[windowAreaViewId];
+        if (config && config.exist) {
+            ShowLoadingView *view = [[ShowLoadingView alloc]initWithFrame:config.frame];
+            self.windowAreaView   = view;
+            [self.view addSubview:view];
+        }
+    }
+}
 
 #pragma mark - Overwrite by subclass.
 

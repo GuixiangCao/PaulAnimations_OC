@@ -20,6 +20,12 @@
 		DA5A46641FBC2FFC00599C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5A46621FBC2FFC00599C71 /* LaunchScreen.storyboard */; };
 		DA5A466F1FBC2FFC00599C71 /* PaulAnimations_OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A466E1FBC2FFC00599C71 /* PaulAnimations_OCTests.m */; };
 		DA5A467A1FBC2FFC00599C71 /* PaulAnimations_OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A46791FBC2FFC00599C71 /* PaulAnimations_OCUITests.m */; };
+		DA76842F1FCE86E300B1B819 /* AnimationsListViewNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA76842E1FCE86E300B1B819 /* AnimationsListViewNavController.m */; };
+		DA7684331FCE890000B1B819 /* AppleSystemService.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7684321FCE890000B1B819 /* AppleSystemService.m */; };
+		DA7684371FCE984900B1B819 /* UIView+AnimationProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7684361FCE984900B1B819 /* UIView+AnimationProperty.m */; };
+		DA76843B1FCE9F1A00B1B819 /* DefaultNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA76843A1FCE9F1A00B1B819 /* DefaultNotificationCenter.m */; };
+		DA76843F1FCEA16C00B1B819 /* NotificationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DA76843E1FCEA16C00B1B819 /* NotificationEvent.m */; };
+		DA7684421FCEA9AF00B1B819 /* AnimationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7684411FCEA9AF00B1B819 /* AnimationListController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,18 @@
 		DA5A46751FBC2FFC00599C71 /* PaulAnimations_OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaulAnimations_OCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5A46791FBC2FFC00599C71 /* PaulAnimations_OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaulAnimations_OCUITests.m; sourceTree = "<group>"; };
 		DA5A467B1FBC2FFC00599C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA76842D1FCE86E300B1B819 /* AnimationsListViewNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationsListViewNavController.h; sourceTree = "<group>"; };
+		DA76842E1FCE86E300B1B819 /* AnimationsListViewNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationsListViewNavController.m; sourceTree = "<group>"; };
+		DA7684311FCE890000B1B819 /* AppleSystemService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleSystemService.h; sourceTree = "<group>"; };
+		DA7684321FCE890000B1B819 /* AppleSystemService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppleSystemService.m; sourceTree = "<group>"; };
+		DA7684351FCE984900B1B819 /* UIView+AnimationProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AnimationProperty.h"; sourceTree = "<group>"; };
+		DA7684361FCE984900B1B819 /* UIView+AnimationProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AnimationProperty.m"; sourceTree = "<group>"; };
+		DA7684391FCE9F1A00B1B819 /* DefaultNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationCenter.h; sourceTree = "<group>"; };
+		DA76843A1FCE9F1A00B1B819 /* DefaultNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationCenter.m; sourceTree = "<group>"; };
+		DA76843D1FCEA16C00B1B819 /* NotificationEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationEvent.h; sourceTree = "<group>"; };
+		DA76843E1FCEA16C00B1B819 /* NotificationEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationEvent.m; sourceTree = "<group>"; };
+		DA7684401FCEA9AF00B1B819 /* AnimationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationListController.h; sourceTree = "<group>"; };
+		DA7684411FCEA9AF00B1B819 /* AnimationListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +114,7 @@
 		DA523C2B1FCAE66000CFB065 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DA76843C1FCEA15E00B1B819 /* Disposable-Tools */,
 				DA523C2C1FCAE66000CFB065 /* General-Tools */,
 				DA523C2D1FCAE66000CFB065 /* AbstractBaseClass */,
 				DA523C2E1FCAE66000CFB065 /* UI-Component */,
@@ -108,6 +127,8 @@
 		DA523C2C1FCAE66000CFB065 /* General-Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DA7684301FCE88F300B1B819 /* AppleSystemService */,
+				DA7684381FCE9F0000B1B819 /* DefaultNotificationCenter */,
 			);
 			path = "General-Tools";
 			sourceTree = "<group>";
@@ -124,6 +145,7 @@
 		DA523C2E1FCAE66000CFB065 /* UI-Component */ = {
 			isa = PBXGroup;
 			children = (
+				DA7684341FCE982B00B1B819 /* UIView+Category */,
 			);
 			path = "UI-Component";
 			sourceTree = "<group>";
@@ -138,6 +160,9 @@
 		DA523C301FCAE66000CFB065 /* RootController */ = {
 			isa = PBXGroup;
 			children = (
+				DA76842B1FCE86C300B1B819 /* Controller */,
+				DA76842C1FCE86C300B1B819 /* Model */,
+				DA76842A1FCE86C300B1B819 /* View */,
 			);
 			path = RootController;
 			sourceTree = "<group>";
@@ -243,6 +268,67 @@
 				DA5A467B1FBC2FFC00599C71 /* Info.plist */,
 			);
 			path = PaulAnimations_OCUITests;
+			sourceTree = "<group>";
+		};
+		DA76842A1FCE86C300B1B819 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA76842B1FCE86C300B1B819 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA76842D1FCE86E300B1B819 /* AnimationsListViewNavController.h */,
+				DA76842E1FCE86E300B1B819 /* AnimationsListViewNavController.m */,
+				DA7684401FCEA9AF00B1B819 /* AnimationListController.h */,
+				DA7684411FCEA9AF00B1B819 /* AnimationListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA76842C1FCE86C300B1B819 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA7684301FCE88F300B1B819 /* AppleSystemService */ = {
+			isa = PBXGroup;
+			children = (
+				DA7684311FCE890000B1B819 /* AppleSystemService.h */,
+				DA7684321FCE890000B1B819 /* AppleSystemService.m */,
+			);
+			path = AppleSystemService;
+			sourceTree = "<group>";
+		};
+		DA7684341FCE982B00B1B819 /* UIView+Category */ = {
+			isa = PBXGroup;
+			children = (
+				DA7684351FCE984900B1B819 /* UIView+AnimationProperty.h */,
+				DA7684361FCE984900B1B819 /* UIView+AnimationProperty.m */,
+			);
+			path = "UIView+Category";
+			sourceTree = "<group>";
+		};
+		DA7684381FCE9F0000B1B819 /* DefaultNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DA7684391FCE9F1A00B1B819 /* DefaultNotificationCenter.h */,
+				DA76843A1FCE9F1A00B1B819 /* DefaultNotificationCenter.m */,
+			);
+			path = DefaultNotificationCenter;
+			sourceTree = "<group>";
+		};
+		DA76843C1FCEA15E00B1B819 /* Disposable-Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DA76843D1FCEA16C00B1B819 /* NotificationEvent.h */,
+				DA76843E1FCEA16C00B1B819 /* NotificationEvent.m */,
+			);
+			path = "Disposable-Tools";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,13 +465,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5A465C1FBC2FFC00599C71 /* ViewController.m in Sources */,
+				DA7684331FCE890000B1B819 /* AppleSystemService.m in Sources */,
+				DA7684371FCE984900B1B819 /* UIView+AnimationProperty.m in Sources */,
 				DA5A46591FBC2FFC00599C71 /* AppDelegate.m in Sources */,
+				DA76842F1FCE86E300B1B819 /* AnimationsListViewNavController.m in Sources */,
 				DA523C381FCAF2EB00CFB065 /* BaseCustomNavigationController.m in Sources */,
 				DA5A46561FBC2FFB00599C71 /* main.m in Sources */,
 				DA523C3C1FCAF41600CFB065 /* BaseCustomViewController.m in Sources */,
+				DA76843F1FCEA16C00B1B819 /* NotificationEvent.m in Sources */,
 				DA523C431FCAFD6700CFB065 /* ControllerBaseViewConfig.m in Sources */,
 				DA523C341FCAE81E00CFB065 /* CustomViewController.m in Sources */,
 				DA523C401FCAF77700CFB065 /* ShowLoadingView.m in Sources */,
+				DA7684421FCEA9AF00B1B819 /* AnimationListController.m in Sources */,
+				DA76843B1FCE9F1A00B1B819 /* DefaultNotificationCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,13 +642,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A66HNYC77P;
 				INFOPLIST_FILE = PaulAnimations_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wewe.PaulAnimations-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -564,13 +658,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A66HNYC77P;
 				INFOPLIST_FILE = PaulAnimations_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wewe.PaulAnimations-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
