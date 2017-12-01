@@ -10,5 +10,6 @@
 
 @interface NotificationEvent : NSObject
 
+@property (nonatomic,class,readonly) NSString *ShowHomePageTableView;
 
 @end

@@ -9,8 +9,11 @@
 #import "AnimationListController.h"
 #import "DefaultNotificationCenter.h"
 #import "NotificationEvent.h"
+#import "GCD.h"
+#import "UIView+SetRect.h"
+//#import "BackgroundLineView.h"
 
-@interface AnimationListController ()<UINavigationControllerDelegate>
+@interface AnimationListController ()<UINavigationControllerDelegate,DefaultNotificationCenterDelegate>
 
 @property (nonatomic, strong) DefaultNotificationCenter *notificationCenter;
 
@@ -22,6 +25,10 @@
     [super viewDidLoad];
     
     [self rootViewControllerSetup];
+    
+    [self configureNotification];
+    
+    [self configTitleView];
 }
 
 #pragma mark - RootViewController setup.
@@ -30,13 +37,26 @@
     self.navigationController.delegate = self;
     
     [self useInteractivePopGestureRecognizer];
-    
 }
 
 -(void)configureNotification{
-//    self.notificationCenter = [DefaultNotificationCenter defaultNotificationCenterWithDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
-//        [names addObject: NotificationEvent.ShowHomePageTableView];
-//    }];
+    self.notificationCenter = [DefaultNotificationCenter notificationDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
+        [names addObject:NotificationEvent.ShowHomePageTableView];
+    }];
+}
+
+#pragma mark - DefaultNotificationCenterDelegate
+-(void)defaultNotificationCenter:(DefaultNotificationCenter *)notification name:(NSString *)name object:(id)object{
+    
+    if ([name isEqualToString:NotificationEvent.ShowHomePageTableView]) {
+        [GCDQueue executeInMainQueue:^{
+            NSLog(@"noti");
+        }];
+    }
+}
+
+-(void)configTitleView{
+    
 }
 
 

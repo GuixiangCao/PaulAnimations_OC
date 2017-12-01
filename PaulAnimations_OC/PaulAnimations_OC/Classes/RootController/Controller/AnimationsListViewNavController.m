@@ -32,7 +32,7 @@
         
     } completion:^(BOOL finished) {
         
-//        [DefaultNotificationCenter postNotificationName:NotificationEvent.ShowHomePageTableView object:nil];
+        [DefaultNotificationCenter postEventToNotificationName:NotificationEvent.ShowHomePageTableView object:nil];
         [iconImageView removeFromSuperview];
     }];
 }

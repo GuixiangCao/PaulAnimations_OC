@@ -26,6 +26,11 @@
 		DA76843B1FCE9F1A00B1B819 /* DefaultNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA76843A1FCE9F1A00B1B819 /* DefaultNotificationCenter.m */; };
 		DA76843F1FCEA16C00B1B819 /* NotificationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DA76843E1FCEA16C00B1B819 /* NotificationEvent.m */; };
 		DA7684421FCEA9AF00B1B819 /* AnimationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7684411FCEA9AF00B1B819 /* AnimationListController.m */; };
+		DAA786B41FCFF30B004B5326 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786AC1FCFF30B004B5326 /* GCDQueue.m */; };
+		DAA786B51FCFF30B004B5326 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786AD1FCFF30B004B5326 /* GCDTimer.m */; };
+		DAA786B61FCFF30B004B5326 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786AE1FCFF30B004B5326 /* GCDGroup.m */; };
+		DAA786B71FCFF30B004B5326 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786B01FCFF30B004B5326 /* GCDSemaphore.m */; };
+		DAA786BF1FD02941004B5326 /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786BD1FD02940004B5326 /* UIView+SetRect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,17 @@
 		DA76843E1FCEA16C00B1B819 /* NotificationEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationEvent.m; sourceTree = "<group>"; };
 		DA7684401FCEA9AF00B1B819 /* AnimationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationListController.h; sourceTree = "<group>"; };
 		DA7684411FCEA9AF00B1B819 /* AnimationListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationListController.m; sourceTree = "<group>"; };
+		DAA786AB1FCFF30B004B5326 /* GCDSemaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSemaphore.h; sourceTree = "<group>"; };
+		DAA786AC1FCFF30B004B5326 /* GCDQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDQueue.m; sourceTree = "<group>"; };
+		DAA786AD1FCFF30B004B5326 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
+		DAA786AE1FCFF30B004B5326 /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
+		DAA786AF1FCFF30B004B5326 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		DAA786B01FCFF30B004B5326 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
+		DAA786B11FCFF30B004B5326 /* GCDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDQueue.h; sourceTree = "<group>"; };
+		DAA786B21FCFF30B004B5326 /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
+		DAA786B31FCFF30B004B5326 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
+		DAA786BD1FD02940004B5326 /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
+		DAA786BE1FD02941004B5326 /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,7 @@
 		DA523C2C1FCAE66000CFB065 /* General-Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DAA786AA1FCFF30B004B5326 /* GCD */,
 				DA7684301FCE88F300B1B819 /* AppleSystemService */,
 				DA7684381FCE9F0000B1B819 /* DefaultNotificationCenter */,
 			);
@@ -145,6 +162,7 @@
 		DA523C2E1FCAE66000CFB065 /* UI-Component */ = {
 			isa = PBXGroup;
 			children = (
+				DAA786B81FCFFB10004B5326 /* ReuseComponents */,
 				DA7684341FCE982B00B1B819 /* UIView+Category */,
 			);
 			path = "UI-Component";
@@ -307,6 +325,8 @@
 		DA7684341FCE982B00B1B819 /* UIView+Category */ = {
 			isa = PBXGroup;
 			children = (
+				DAA786BE1FD02941004B5326 /* UIView+SetRect.h */,
+				DAA786BD1FD02940004B5326 /* UIView+SetRect.m */,
 				DA7684351FCE984900B1B819 /* UIView+AnimationProperty.h */,
 				DA7684361FCE984900B1B819 /* UIView+AnimationProperty.m */,
 			);
@@ -329,6 +349,37 @@
 				DA76843E1FCEA16C00B1B819 /* NotificationEvent.m */,
 			);
 			path = "Disposable-Tools";
+			sourceTree = "<group>";
+		};
+		DAA786AA1FCFF30B004B5326 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				DAA786AB1FCFF30B004B5326 /* GCDSemaphore.h */,
+				DAA786AC1FCFF30B004B5326 /* GCDQueue.m */,
+				DAA786AD1FCFF30B004B5326 /* GCDTimer.m */,
+				DAA786AE1FCFF30B004B5326 /* GCDGroup.m */,
+				DAA786AF1FCFF30B004B5326 /* GCD.h */,
+				DAA786B01FCFF30B004B5326 /* GCDSemaphore.m */,
+				DAA786B11FCFF30B004B5326 /* GCDQueue.h */,
+				DAA786B21FCFF30B004B5326 /* GCDGroup.h */,
+				DAA786B31FCFF30B004B5326 /* GCDTimer.h */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		DAA786B81FCFFB10004B5326 /* ReuseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DAA786B91FCFFB32004B5326 /* LineBackgroundView */,
+			);
+			path = ReuseComponents;
+			sourceTree = "<group>";
+		};
+		DAA786B91FCFFB32004B5326 /* LineBackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LineBackgroundView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,16 +519,21 @@
 				DA7684331FCE890000B1B819 /* AppleSystemService.m in Sources */,
 				DA7684371FCE984900B1B819 /* UIView+AnimationProperty.m in Sources */,
 				DA5A46591FBC2FFC00599C71 /* AppDelegate.m in Sources */,
+				DAA786B51FCFF30B004B5326 /* GCDTimer.m in Sources */,
+				DAA786B41FCFF30B004B5326 /* GCDQueue.m in Sources */,
+				DAA786B61FCFF30B004B5326 /* GCDGroup.m in Sources */,
 				DA76842F1FCE86E300B1B819 /* AnimationsListViewNavController.m in Sources */,
 				DA523C381FCAF2EB00CFB065 /* BaseCustomNavigationController.m in Sources */,
 				DA5A46561FBC2FFB00599C71 /* main.m in Sources */,
 				DA523C3C1FCAF41600CFB065 /* BaseCustomViewController.m in Sources */,
 				DA76843F1FCEA16C00B1B819 /* NotificationEvent.m in Sources */,
+				DAA786BF1FD02941004B5326 /* UIView+SetRect.m in Sources */,
 				DA523C431FCAFD6700CFB065 /* ControllerBaseViewConfig.m in Sources */,
 				DA523C341FCAE81E00CFB065 /* CustomViewController.m in Sources */,
 				DA523C401FCAF77700CFB065 /* ShowLoadingView.m in Sources */,
 				DA7684421FCEA9AF00B1B819 /* AnimationListController.m in Sources */,
 				DA76843B1FCE9F1A00B1B819 /* DefaultNotificationCenter.m in Sources */,
+				DAA786B71FCFF30B004B5326 /* GCDSemaphore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

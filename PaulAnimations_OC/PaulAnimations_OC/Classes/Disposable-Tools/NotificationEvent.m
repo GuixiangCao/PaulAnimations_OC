@@ -10,5 +10,9 @@
 
 @implementation NotificationEvent
 
++ (NSString *)ShowHomePageTableView {
+    
+    return @"NotificationEvent_ShowHomePageTableView";
+}
 
 @end
