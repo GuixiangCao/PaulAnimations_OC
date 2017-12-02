@@ -40,14 +40,14 @@
 }
 
 -(void)configureNotification{
-    self.notificationCenter = [DefaultNotificationCenter notificationDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
+    self.notificationCenter = [DefaultNotificationCenter defaultNotoficationDelegate:self addNotificationName:^(NSMutableArray<NSString *> *names) {
         [names addObject:NotificationEvent.ShowHomePageTableView];
     }];
 }
 
 #pragma mark - DefaultNotificationCenterDelegate
--(void)defaultNotificationCenter:(DefaultNotificationCenter *)notification name:(NSString *)name object:(id)object{
-    
+
+-(void)defaultNotificationwWithDelegate:(DefaultNotificationCenter *)noti name:(NSString *)name object:(id)object{
     if ([name isEqualToString:NotificationEvent.ShowHomePageTableView]) {
         [GCDQueue executeInMainQueue:^{
             NSLog(@"noti");
