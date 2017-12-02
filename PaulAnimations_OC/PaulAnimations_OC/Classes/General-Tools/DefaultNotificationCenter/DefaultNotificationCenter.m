@@ -37,7 +37,6 @@
 +(void)postNotificaitonWithName:(NSString *)name objectc:(id)object
 {
     [[NSNotificationCenter defaultCenter]postNotificationName:name object:object];
-    
 }
 
 +(instancetype)defaultNotoficationDelegate:(id<DefaultNotificationCenterDelegate>)delegate addNotificationName:(void (^)(NSMutableArray<NSString *> *))addNotificationsBlock

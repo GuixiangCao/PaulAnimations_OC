@@ -20,6 +20,7 @@
 		DA5A46641FBC2FFC00599C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5A46621FBC2FFC00599C71 /* LaunchScreen.storyboard */; };
 		DA5A466F1FBC2FFC00599C71 /* PaulAnimations_OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A466E1FBC2FFC00599C71 /* PaulAnimations_OCTests.m */; };
 		DA5A467A1FBC2FFC00599C71 /* PaulAnimations_OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A46791FBC2FFC00599C71 /* PaulAnimations_OCUITests.m */; };
+		DA69414A1FD25797007C7CD1 /* BackgroundLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6941491FD25797007C7CD1 /* BackgroundLineView.m */; };
 		DA76842F1FCE86E300B1B819 /* AnimationsListViewNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA76842E1FCE86E300B1B819 /* AnimationsListViewNavController.m */; };
 		DA7684331FCE890000B1B819 /* AppleSystemService.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7684321FCE890000B1B819 /* AppleSystemService.m */; };
 		DA7684371FCE984900B1B819 /* UIView+AnimationProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7684361FCE984900B1B819 /* UIView+AnimationProperty.m */; };
@@ -77,6 +78,8 @@
 		DA5A46751FBC2FFC00599C71 /* PaulAnimations_OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaulAnimations_OCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5A46791FBC2FFC00599C71 /* PaulAnimations_OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaulAnimations_OCUITests.m; sourceTree = "<group>"; };
 		DA5A467B1FBC2FFC00599C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA6941481FD25797007C7CD1 /* BackgroundLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundLineView.h; sourceTree = "<group>"; };
+		DA6941491FD25797007C7CD1 /* BackgroundLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundLineView.m; sourceTree = "<group>"; };
 		DA76842D1FCE86E300B1B819 /* AnimationsListViewNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationsListViewNavController.h; sourceTree = "<group>"; };
 		DA76842E1FCE86E300B1B819 /* AnimationsListViewNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationsListViewNavController.m; sourceTree = "<group>"; };
 		DA7684311FCE890000B1B819 /* AppleSystemService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleSystemService.h; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 		DAA786B91FCFFB32004B5326 /* LineBackgroundView */ = {
 			isa = PBXGroup;
 			children = (
+				DA6941481FD25797007C7CD1 /* BackgroundLineView.h */,
+				DA6941491FD25797007C7CD1 /* BackgroundLineView.m */,
 			);
 			path = LineBackgroundView;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				DA523C401FCAF77700CFB065 /* ShowLoadingView.m in Sources */,
 				DA7684421FCEA9AF00B1B819 /* AnimationListController.m in Sources */,
 				DA76843B1FCE9F1A00B1B819 /* DefaultNotificationCenter.m in Sources */,
+				DA69414A1FD25797007C7CD1 /* BackgroundLineView.m in Sources */,
 				DAA786B71FCFF30B004B5326 /* GCDSemaphore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
