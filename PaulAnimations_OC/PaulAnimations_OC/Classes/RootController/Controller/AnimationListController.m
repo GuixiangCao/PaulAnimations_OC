@@ -11,9 +11,9 @@
 #import "NotificationEvent.h"
 #import "GCD.h"
 #import "UIView+SetRect.h"
-//#import "BackgroundLineView.h"
+#import "BackgroundLineView.h"
 
-@interface AnimationListController ()<UINavigationControllerDelegate,DefaultNotificationCenterDelegate>
+@interface AnimationListController ()<UINavigationControllerDelegate,DefaultNotiDelegate>
 
 @property (nonatomic, strong) DefaultNotificationCenter *notificationCenter;
 
@@ -40,23 +40,25 @@
 }
 
 -(void)configureNotification{
-    self.notificationCenter = [DefaultNotificationCenter defaultNotoficationDelegate:self addNotificationName:^(NSMutableArray<NSString *> *names) {
-        [names addObject:NotificationEvent.ShowHomePageTableView];
+    self.notificationCenter = [DefaultNotificationCenter addNotificationCenterDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
+        [names addObject: NotificationEvent.ShowHomePageTableView];
     }];
 }
 
 #pragma mark - DefaultNotificationCenterDelegate
 
--(void)defaultNotificationwWithDelegate:(DefaultNotificationCenter *)noti name:(NSString *)name object:(id)object{
+-(void)defaultNotification:(DefaultNotificationCenter *)noti name:(NSString *)name object:(id)object{
     if ([name isEqualToString:NotificationEvent.ShowHomePageTableView]) {
         [GCDQueue executeInMainQueue:^{
             NSLog(@"noti");
         }];
     }
 }
-
 -(void)configTitleView{
     
+    BackgroundLineView *lineView = [BackgroundLineView backGroundLineWithFrame:CGRectMake(0, 0, Width, 64)                                                 lineWidth:4 lienGap:4 lineColor:[[UIColor blackColor] colorWithAlphaComponent:0.12] rotate:M_PI_4];
+    
+    [self.titleView addSubview:lineView];
 }
 
 

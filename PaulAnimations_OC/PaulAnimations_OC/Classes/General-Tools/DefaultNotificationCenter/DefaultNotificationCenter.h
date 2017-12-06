@@ -9,21 +9,21 @@
 #import <Foundation/Foundation.h>
 
 @class DefaultNotificationCenter;
-
-@protocol DefaultNotificationCenterDelegate <NSObject>
+@protocol DefaultNotiDelegate <NSObject>
 
 @required
 
--(void)defaultNotificationwWithDelegate:(DefaultNotificationCenter *)noti name:(NSString *)name object:(id)object;
+-(void)defaultNotification:(DefaultNotificationCenter *)noti name:(NSString *)name object:(id)object;
 
 @end
 
 @interface DefaultNotificationCenter : NSObject
 
-@property (nonatomic,weak) id <DefaultNotificationCenterDelegate> delegate;
+@property (nonatomic,weak) id <DefaultNotiDelegate> delegate;
 
-+(void)postNotificaitonWithName:(NSString *)name objectc:(id)object;
++(instancetype)addNotificationCenterDelegate : (id<DefaultNotiDelegate>)delegate
+                         addNotificationNames:(void(^)(NSMutableArray <NSString *> *names))addNotificationNames;
 
-+(instancetype)defaultNotoficationDelegate : (id <DefaultNotificationCenterDelegate>)delegate
-                        addNotificationName:(void(^)(NSMutableArray <NSString *> *names))addNotificationsBlock;
++(void)postName :(NSString *)name withObject:(id)object;
+
 @end

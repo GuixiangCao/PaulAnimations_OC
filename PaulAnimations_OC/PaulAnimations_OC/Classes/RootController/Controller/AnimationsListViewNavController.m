@@ -31,8 +31,8 @@
         iconImageView.alpha = 0.f;
         
     } completion:^(BOOL finished) {
-        
-        [DefaultNotificationCenter postNotificaitonWithName:NotificationEvent.ShowHomePageTableView objectc:nil];
+
+        [DefaultNotificationCenter postName:NotificationEvent.ShowHomePageTableView withObject:nil];
         [iconImageView removeFromSuperview];
     }];
 }

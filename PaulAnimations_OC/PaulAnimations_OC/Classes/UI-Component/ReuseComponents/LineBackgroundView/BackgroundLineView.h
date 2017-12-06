@@ -18,7 +18,7 @@
 
 @property (nonatomic) CGFloat rotate;
 
++(instancetype)backGroundLineWithFrame:(CGRect)frame lineWidth :(CGFloat)lineWidth lienGap:(CGFloat)lineGap
+                             lineColor:(UIColor *)lineColor rotate:(CGFloat)rotate;
 
-//+(instancetype)backGroundLineWithFrame:(CGRect)frame lineWith:(CGFloat)lineWidth lineGap:(CGFloat)lineGap
-//                             lineColor:(UIColor *)lineColor rotate:(CGFloat)rotate;
 @end

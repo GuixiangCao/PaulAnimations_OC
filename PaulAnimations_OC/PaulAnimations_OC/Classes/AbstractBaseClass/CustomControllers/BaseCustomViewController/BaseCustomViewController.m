@@ -28,7 +28,9 @@ NSString * const backgroundViewId  = @"backgroundViewId";
     self.automaticallyAdjustsScrollViewInsets = false;
     [self initViewConfigs];
     [self makeViewsConfig:self.viewConfigs];
-    
+    [self buildConfigViews];
+    [self setupSubViews];
+    [self setupDataSource];
 }
 
 -(void)initViewConfigs{
