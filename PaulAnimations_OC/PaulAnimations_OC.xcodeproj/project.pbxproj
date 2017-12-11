@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA480F201FDA81F400497D73 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480F1F1FDA81F400497D73 /* CustomCell.m */; };
+		DA480F241FDA928300497D73 /* ListItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480F231FDA928300497D73 /* ListItemCell.m */; };
 		DA523C341FCAE81E00CFB065 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C331FCAE81E00CFB065 /* CustomViewController.m */; };
 		DA523C381FCAF2EB00CFB065 /* BaseCustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C371FCAF2EB00CFB065 /* BaseCustomNavigationController.m */; };
 		DA523C3C1FCAF41600CFB065 /* BaseCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA523C3B1FCAF41600CFB065 /* BaseCustomViewController.m */; };
@@ -32,6 +34,9 @@
 		DAA786B61FCFF30B004B5326 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786AE1FCFF30B004B5326 /* GCDGroup.m */; };
 		DAA786B71FCFF30B004B5326 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786B01FCFF30B004B5326 /* GCDSemaphore.m */; };
 		DAA786BF1FD02941004B5326 /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA786BD1FD02940004B5326 /* UIView+SetRect.m */; };
+		DAB349EC1FD7DC1C0092A5C8 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB349EB1FD7DC1C0092A5C8 /* Item.m */; };
+		DAF059551FD91AB20019AB8C /* CellDataAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF059541FD91AB20019AB8C /* CellDataAdapter.m */; };
+		DAFA61E61FDE8D7F004960FF /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFA61E51FDE8D7F004960FF /* testViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA480F1E1FDA81F400497D73 /* CustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		DA480F1F1FDA81F400497D73 /* CustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		DA480F221FDA928300497D73 /* ListItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListItemCell.h; sourceTree = "<group>"; };
+		DA480F231FDA928300497D73 /* ListItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListItemCell.m; sourceTree = "<group>"; };
 		DA523C321FCAE81E00CFB065 /* CustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
 		DA523C331FCAE81E00CFB065 /* CustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
 		DA523C361FCAF2EB00CFB065 /* BaseCustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCustomNavigationController.h; sourceTree = "<group>"; };
@@ -103,6 +112,12 @@
 		DAA786B31FCFF30B004B5326 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
 		DAA786BD1FD02940004B5326 /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
 		DAA786BE1FD02941004B5326 /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
+		DAB349EA1FD7DC1C0092A5C8 /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		DAB349EB1FD7DC1C0092A5C8 /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		DAF059531FD91AB20019AB8C /* CellDataAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellDataAdapter.h; sourceTree = "<group>"; };
+		DAF059541FD91AB20019AB8C /* CellDataAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellDataAdapter.m; sourceTree = "<group>"; };
+		DAFA61E41FDE8D7F004960FF /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		DAFA61E51FDE8D7F004960FF /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +145,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA480F1D1FDA81DD00497D73 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				DA480F1E1FDA81F400497D73 /* CustomCell.h */,
+				DA480F1F1FDA81F400497D73 /* CustomCell.m */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		DA480F211FDA927A00497D73 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DA480F221FDA928300497D73 /* ListItemCell.h */,
+				DA480F231FDA928300497D73 /* ListItemCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DA523C2B1FCAE66000CFB065 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +189,8 @@
 		DA523C2D1FCAE66000CFB065 /* AbstractBaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				DA480F1D1FDA81DD00497D73 /* CustomCell */,
+				DAF059521FD91A760019AB8C /* TableViewDataAdapter */,
 				DA523C351FCAF2DF00CFB065 /* CustomNavController */,
 				DA523C311FCAE6DD00CFB065 /* CustomControllers */,
 			);
@@ -174,6 +209,7 @@
 		DA523C2F1FCAE66000CFB065 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DAFA61E01FDE8D40004960FF /* TableViewTapAnimationController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +330,7 @@
 		DA76842A1FCE86C300B1B819 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA480F211FDA927A00497D73 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +349,8 @@
 		DA76842C1FCE86C300B1B819 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAB349EA1FD7DC1C0092A5C8 /* Item.h */,
+				DAB349EB1FD7DC1C0092A5C8 /* Item.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,6 +424,48 @@
 				DA6941491FD25797007C7CD1 /* BackgroundLineView.m */,
 			);
 			path = LineBackgroundView;
+			sourceTree = "<group>";
+		};
+		DAF059521FD91A760019AB8C /* TableViewDataAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				DAF059531FD91AB20019AB8C /* CellDataAdapter.h */,
+				DAF059541FD91AB20019AB8C /* CellDataAdapter.m */,
+			);
+			path = TableViewDataAdapter;
+			sourceTree = "<group>";
+		};
+		DAFA61E01FDE8D40004960FF /* TableViewTapAnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				DAFA61E11FDE8D40004960FF /* Controller */,
+				DAFA61E21FDE8D40004960FF /* Model */,
+				DAFA61E31FDE8D40004960FF /* View */,
+			);
+			path = TableViewTapAnimationController;
+			sourceTree = "<group>";
+		};
+		DAFA61E11FDE8D40004960FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAFA61E41FDE8D7F004960FF /* testViewController.h */,
+				DAFA61E51FDE8D7F004960FF /* testViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DAFA61E21FDE8D40004960FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAFA61E31FDE8D40004960FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,14 +613,19 @@
 				DA5A46561FBC2FFB00599C71 /* main.m in Sources */,
 				DA523C3C1FCAF41600CFB065 /* BaseCustomViewController.m in Sources */,
 				DA76843F1FCEA16C00B1B819 /* NotificationEvent.m in Sources */,
+				DAB349EC1FD7DC1C0092A5C8 /* Item.m in Sources */,
+				DAF059551FD91AB20019AB8C /* CellDataAdapter.m in Sources */,
 				DAA786BF1FD02941004B5326 /* UIView+SetRect.m in Sources */,
 				DA523C431FCAFD6700CFB065 /* ControllerBaseViewConfig.m in Sources */,
 				DA523C341FCAE81E00CFB065 /* CustomViewController.m in Sources */,
+				DA480F201FDA81F400497D73 /* CustomCell.m in Sources */,
 				DA523C401FCAF77700CFB065 /* ShowLoadingView.m in Sources */,
 				DA7684421FCEA9AF00B1B819 /* AnimationListController.m in Sources */,
+				DA480F241FDA928300497D73 /* ListItemCell.m in Sources */,
 				DA76843B1FCE9F1A00B1B819 /* DefaultNotificationCenter.m in Sources */,
 				DA69414A1FD25797007C7CD1 /* BackgroundLineView.m in Sources */,
 				DAA786B71FCFF30B004B5326 /* GCDSemaphore.m in Sources */,
+				DAFA61E61FDE8D7F004960FF /* testViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
