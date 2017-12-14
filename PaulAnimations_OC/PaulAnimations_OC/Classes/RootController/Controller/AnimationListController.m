@@ -18,7 +18,7 @@
 #import "ListItemCell.h"
 #import "testViewController.h"
 
-@interface AnimationListController ()<UINavigationControllerDelegate,DefaultNotiDelegate,UITableViewDelegate,UITableViewDataSource,CustomCellDelegate>
+@interface AnimationListController ()<UINavigationControllerDelegate,DefaultNotificationCenterDelegate,UITableViewDelegate,UITableViewDataSource,CustomCellDelegate>
 
 @property (nonatomic, strong) DefaultNotificationCenter *notificationCenter;
 @property (nonatomic, strong) UITableView               *tableView;
@@ -54,14 +54,14 @@
 }
 
 -(void)configureNotification{
-    self.notificationCenter = [DefaultNotificationCenter addNotificationCenterDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
-        [names addObject: NotificationEvent.ShowHomePageTableView];
+    self.notificationCenter = [DefaultNotificationCenter defaultNotificationCenterWidthDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
+        [names addObject:NotificationEvent.ShowHomePageTableView];
     }];
 }
 
 #pragma mark - DefaultNotificationCenterDelegate
 
--(void)defaultNotification:(DefaultNotificationCenter *)noti name:(NSString *)name object:(id)object{
+-(void)defaultNotificationCenter:(DefaultNotificationCenter *)nofification name:(NSString *)name objec:(id)object{
     if ([name isEqualToString:NotificationEvent.ShowHomePageTableView]) {
         [GCDQueue executeInMainQueue:^{
             NSLog(@"noti");
@@ -126,8 +126,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    return [tableView dequeueReusableCellAndLoadDataWithAdapter:_items[indexPath.row] delegate:self indexPath:indexPath];
-    return [tableView dequeueReuseableCellAndLoadWithAdapter:_items[indexPath.row] delegate:self indexPath:indexPath];
+    return [tableView dequeueReusableCellAndLoadDataWithAdapter:_items[indexPath.row] delegate:self indexPath:indexPath];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -143,5 +142,7 @@
         [self.navigationController pushViewController:controller animated:YES];
     }
 }
+
+//-(void)customCell:(CustomCell *)cell event:(id)event
 
 @end

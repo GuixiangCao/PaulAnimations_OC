@@ -11,8 +11,7 @@
 @implementation CustomCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupCell];
         [self buildSubview];
@@ -20,17 +19,25 @@
     return self;
 }
 
--(void)buildSubview
-{
++(void)registerToTableView:(UITableView *)tableView{
+    [tableView registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])];
     
 }
 
--(void)setupCell{
+- (void)loadContentWithAdapter:(CellDataAdapter *)dataAdapter{
     
 }
 
--(void)loadContent{
-    
+- (void)loadContentWithAdapter:(CellDataAdapter *)dataAdapter
+                      delegate:(id <CustomCellDelegate>)delegate
+                     tableView:(UITableView *)tableView
+                     indexPath:(NSIndexPath *)indexPath {
+    _adapter = dataAdapter;
+    _data    = dataAdapter.data;
+    _indexPath = dataAdapter.inedxPath;
+    _degate    = delegate;
+    _tableView = tableView;
+    [self loadContent];
 }
 
 -(void)selectedEvent{
@@ -39,41 +46,35 @@
 }
 
 -(void)delegateEvent{
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(customCell:event:)]) {
-        [self.delegate customCell:self event:self.data];
+    if (self.degate && [self.degate respondsToSelector:@selector(customCell:event:)]) {
+        [self.degate customCell:self event:self.data];
     }
 }
 
--(void)loadContentWithAdapter:(CellDataAdapter *)dataAdapter
-                     delegate:(id <CustomCellDelegate>)delegate
-                    tableView:(UITableView *)tableView
-                    indexPath:(NSIndexPath *)indexPath{
-    _adapter     = dataAdapter;
-    _data        = dataAdapter.data;
-    _indexPath   = indexPath;
-    _delegate    = delegate;
-    _tableView   = tableView;
-    [self loadContent];
+-(void)setupCell{
+    
 }
 
-+(CellDataAdapter *)dataAdapterWithData:(id)data{
+-(void)buildSubview{
     
-    return [[self class] dataAdapterWithCellReuseIdentifier:nil data:data cellHeight:0 type:0];
 }
 
-+(void)registerToTableView:(UITableView *)tableView{
+-(void)loadContent{
     
-    [tableView registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])];
 }
+
 
 #pragma mark - Normal type adapter.
 +(CellDataAdapter *)dataAdapterWithCellReuseIdentifier:(NSString *)reuseIdentifier
                                                   data:(id)data
                                             cellHeight:(CGFloat)height
                                                   type:(NSInteger)type{
-    NSString *tmpReuseIdentifier = reuseIdentifier.length <= 0 ? NSStringFromClass([self class]) : reuseIdentifier;
-    return [CellDataAdapter cellDataApaterWithCellReuseIdentifier:tmpReuseIdentifier data:data cellHeight:height cellType:type];
+    NSString *tmpReuseIdentifier = reuseIdentifier.length <= 0 ? NSStringFromClass([self class]): reuseIdentifier;
+    return [CellDataAdapter cellDataAdpaterWithCellReuseIdentifier:tmpReuseIdentifier data:data cellHeight:height cellType:type];
+}
+
++(CellDataAdapter *)dataAdapterWithData:(id)data{
+   return [[self class] dataAdapterWithCellReuseIdentifier:nil data:data cellHeight:0 type:0];
 }
 
 @end
@@ -81,15 +82,15 @@
 #pragma mark - UITableView(CustomCell)
 @implementation UITableView (CustomCell)
 
--(CustomCell *)dequeueReuseableCellAndLoadWithAdapter:(CellDataAdapter *)adapter delegate:(id<CustomCellDelegate>)delegate indexPath:(NSIndexPath *)indexPath{
-    
-    CustomCell *cell = [self dequeueReusableCellWithIdentifier:adapter.cellReuseIdentifier forIndexPath:indexPath];
-    
+- (CustomCell *)dequeueReusableCellAndLoadDataWithAdapter:(CellDataAdapter *)adapter
+                                                 delegate:(id <CustomCellDelegate>)delegate
+                                                indexPath:(NSIndexPath *)indexPath {
+    CustomCell *cell = [self dequeueReusableCellWithIdentifier:adapter.celReuserIdentifier forIndexPath:indexPath];
     [cell loadContentWithAdapter:adapter delegate:delegate tableView:self indexPath:indexPath];
     return cell;
 }
 
--(void)selectedEventAtIndexPath:(NSIndexPath *)indexPath{
+- (void)selectedEventAtIndexPath:(NSIndexPath *)indexPath {
     
     CustomCell *cell = [self cellForRowAtIndexPath:indexPath];
     if ([cell isKindOfClass:[CustomCell class]]) {

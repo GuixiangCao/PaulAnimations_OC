@@ -10,15 +10,25 @@
 
 @implementation CellDataAdapter
 
-+(CellDataAdapter *)cellDataApaterWithCellReuseIdentifier:(NSString *)reuseString data:(id)data cellHeight:(CGFloat)cellHeight cellType:(NSInteger)cellType
-{
-    CellDataAdapter *adapter    = [[self class] new];
-    adapter.cellReuseIdentifier = reuseString;
-    adapter.data                = data;
-    adapter.cellHeight          = cellHeight;
-    adapter.cellWidth           = cellType;
+//+(CellDataAdapter *)cellDataApaterWithCellReuseIdentifier:(NSString *)reuseString data:(id)data cellHeight:(CGFloat)cellHeight cellType:(NSInteger)cellType
+//{
+//    CellDataAdapter *adapter    = [[self class] new];
+//    adapter.cellReuseIdentifier = reuseString;
+//    adapter.data                = data;
+//    adapter.cellHeight          = cellHeight;
+//    adapter.cellWidth           = cellType;
+//
+//    return adapter;
+//}
+
++(CellDataAdapter *)cellDataAdpaterWithCellReuseIdentifier:(NSString *)reuseSring data:(id)data cellHeight:(CGFloat)cellHeight cellType:(NSInteger)cellType{
     
-    return adapter;
+    CellDataAdapter *adapter    = [[self class]new];
+    adapter.celReuserIdentifier = reuseSring;
+    adapter.data                = data;
+    adapter.cellWidth           = cellHeight;
+    adapter.cellType            = cellType;
+    return  adapter;
 }
 
 @end

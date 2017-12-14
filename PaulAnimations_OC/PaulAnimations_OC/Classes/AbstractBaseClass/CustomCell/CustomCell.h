@@ -11,6 +11,7 @@
 #import "CellDataAdapter.h"
 
 @class CustomCell;
+
 @protocol CustomCellDelegate <NSObject>
 
 @optional
@@ -21,19 +22,35 @@
 
 @interface CustomCell : UITableViewCell
 
-@property (nonatomic,weak) id <CustomCellDelegate> delegate;
-
+@property (nonatomic,weak) id <CustomCellDelegate> degate;
 @property (nonatomic,strong) CellDataAdapter *adapter;
+@property (nonatomic)        BOOL             display;
 
-@property (nonatomic) BOOL display;
+@property (nonatomic,weak)   id                data;
+@property (nonatomic,weak)   NSIndexPath      *indexPath;
+@property (nonatomic,weak)   UITableView      *tableView;
+@property (nonatomic,weak)   UIViewController *controller;
 
-@property (nonatomic, weak) id data;
+/**
+ *  Create the cell's dataAdapter, the CellReuseIdentifier is the cell's class string.
+ *  @param data            Cell's data, can be nil.
+ *  @return Cell's dataAdapter.
+ */
++(CellDataAdapter *)dataAdapterWithData:(id)data;
 
-@property (nonatomic, weak) NSIndexPath *indexPath;
-@property (nonatomic, weak) UITableView *tableView;
-@property (nonatomic, weak) UIViewController *controller;
+/**
+ Set the dataAdapter and load content.
+ @param dataAdapter The CellDataAdapter.
+ */
+- (void)loadContentWithAdapter:(CellDataAdapter *)dataAdapter;
+
+- (void)loadContentWithAdapter:(CellDataAdapter *)dataAdapter
+                      delegate:(id <CustomCellDelegate>)delegate
+                     tableView:(UITableView *)tableView
+                     indexPath:(NSIndexPath *)indexPath;
 
 
++(void)registerToTableView:(UITableView *)tableView;
 
 #pragma mark - Method overwrited by subclass
 -(void)setupCell;
@@ -42,18 +59,15 @@
 
 -(void)loadContent;
 
-+(CellDataAdapter *)dataAdapterWithData:(id)data;
-
-+(void)registerToTableView:(UITableView *)tableView;
-
 @end
 
 #pragma mark - UITableView category.
 @interface UITableView (CustomCell)
 
--(CustomCell *)dequeueReuseableCellAndLoadWithAdapter:(CellDataAdapter *)adapter delegate:(id <CustomCellDelegate>)delegate indexPath : (NSIndexPath *)indexPath;
+- (void)selectedEventAtIndexPath:(NSIndexPath *)indexPath;
 
--(void)selectedEventAtIndexPath:(NSIndexPath *)indexPath;
-
+- (CustomCell *)dequeueReusableCellAndLoadDataWithAdapter:(CellDataAdapter *)adapter
+                                                 delegate:(id <CustomCellDelegate>)delegate
+                                                indexPath:(NSIndexPath *)indexPath;
 @end
 

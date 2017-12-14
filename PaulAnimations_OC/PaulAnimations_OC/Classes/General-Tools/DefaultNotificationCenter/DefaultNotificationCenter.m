@@ -8,74 +8,72 @@
 
 #import "DefaultNotificationCenter.h"
 
-@interface DefaultNotificationModel : NSObject
+@interface DefaultNotificationCenterModel : NSObject
 
 @property (nonatomic,strong) NSString *name;
-@property (nonatomic)        BOOL     effective;
+
+@property (nonatomic) BOOL effective;
 
 @end
 
-@implementation DefaultNotificationModel
+@implementation DefaultNotificationCenterModel
 
 @end
 
 @interface DefaultNotificationCenter()
 
-@property (nonatomic,strong) NSMutableArray <DefaultNotificationModel *> *stringArr;
+@property (nonatomic,strong) NSMutableArray <DefaultNotificationCenterModel *> *stringArray;
 
 @end
 
 @implementation DefaultNotificationCenter
 
 -(instancetype)init{
-
+    
     if (self = [super init]) {
-        self.stringArr = [NSMutableArray array];
+        self.stringArray = [NSMutableArray array];
     }
     return self;
 }
 
-+(void)postName:(NSString *)name withObject:(id)object
-{
++(void)postEventToNotificationName:(NSString *)name object:(id)object{
     
-    [[NSNotificationCenter defaultCenter]postNotificationName:name object:object];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:name object:nil];
 }
 
-+(instancetype)addNotificationCenterDelegate:(id<DefaultNotiDelegate>)delegate addNotificationNames:(void (^)(NSMutableArray<NSString *> *))addNotificationNames
-{
++(instancetype)defaultNotificationCenterWidthDelegate:(id<DefaultNotificationCenterDelegate>)delegate addNotificationNames:(void (^)(NSMutableArray<NSString *> *))addNamesBlock{
     
     NSMutableArray *arr = nil;
     
-    DefaultNotificationCenter *notiCenter = [[DefaultNotificationCenter alloc]init];
+    DefaultNotificationCenter *notiCenter = [[self class] new];
     notiCenter.delegate                   = delegate;
     
-    if (addNotificationNames) {
+    if (addNamesBlock) {
         arr = [NSMutableArray array];
-        addNotificationNames(arr);
+        addNamesBlock(arr);
     }
-    
     [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [notiCenter addNotiNames:obj];
+        [notiCenter addNotification:obj];
     }];
     
     return notiCenter;
 }
 
--(void)addNotiNames:(NSString *)name{
+-(void)addNotification:(NSString *)name{
     
-    DefaultNotificationModel *model = [DefaultNotificationModel new];
-    model.name                      = name;
-    model.effective                 = true;
+    DefaultNotificationCenterModel *model = [DefaultNotificationCenterModel new];
+    model.name                            = name;
+    model.effective                       = true;
     
-    [self.stringArr addObject:model];
+    [self.stringArray addObject:model];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notificationEvent:) name:name object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notificationEvent:) name:model.name object:nil];
 }
 
--(void)notificationEvent:(NSNotification *)noti{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(defaultNotification:name:object:)]) {
-        [self.delegate defaultNotification:self name:noti.name  object:nil];
+-(void)notificationEvent:(NSNotification *)obj{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(defaultNotificationCenter:name:objec:)]) {
+        [self.delegate defaultNotificationCenter:self name:obj.name objec:obj.object];
     }
 }
+
 @end
