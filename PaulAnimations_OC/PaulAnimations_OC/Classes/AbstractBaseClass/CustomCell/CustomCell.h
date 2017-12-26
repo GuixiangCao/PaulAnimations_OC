@@ -22,14 +22,23 @@
 
 @interface CustomCell : UITableViewCell
 
-@property (nonatomic,weak) id <CustomCellDelegate> degate;
-@property (nonatomic,strong) CellDataAdapter *adapter;
-@property (nonatomic)        BOOL             display;
+//@property (nonatomic,weak) id <CustomCellDelegate> degate;
+//@property (nonatomic,strong) CellDataAdapter *adapter;
+//@property (nonatomic)        BOOL             display;
+//
+//@property (nonatomic,weak)   id                data;
+//@property (nonatomic,weak)   NSIndexPath      *indexPath;
+//@property (nonatomic,weak)   UITableView      *tableView;
+//@property (nonatomic,weak)   UIViewController *controller;
 
-@property (nonatomic,weak)   id                data;
-@property (nonatomic,weak)   NSIndexPath      *indexPath;
-@property (nonatomic,weak)   UITableView      *tableView;
-@property (nonatomic,weak)   UIViewController *controller;
+@property (nonatomic,weak) id <CustomCellDelegate> delegate;
+@property (nonatomic,strong)  CellDataAdapter      *adapter;
+@property (nonatomic)         BOOL                 display;
+
+@property (nonatomic,weak)    id                   data;
+@property (nonatomic,weak)    NSIndexPath          *indexPath;
+@property (nonatomic,weak)    UITableView          *tableView;
+@property (nonatomic,weak)    UIViewController     *controller;
 
 /**
  *  Create the cell's dataAdapter, the CellReuseIdentifier is the cell's class string.

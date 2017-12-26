@@ -32,10 +32,10 @@
                       delegate:(id <CustomCellDelegate>)delegate
                      tableView:(UITableView *)tableView
                      indexPath:(NSIndexPath *)indexPath {
-    _adapter = dataAdapter;
-    _data    = dataAdapter.data;
+    _adapter   = dataAdapter;
+    _data      = dataAdapter.data;
     _indexPath = dataAdapter.inedxPath;
-    _degate    = delegate;
+    _delegate  = delegate;
     _tableView = tableView;
     [self loadContent];
 }
@@ -46,8 +46,8 @@
 }
 
 -(void)delegateEvent{
-    if (self.degate && [self.degate respondsToSelector:@selector(customCell:event:)]) {
-        [self.degate customCell:self event:self.data];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(customCell:event:)]) {
+        [self.delegate customCell:self event:self.data];
     }
 }
 
@@ -74,7 +74,8 @@
 }
 
 +(CellDataAdapter *)dataAdapterWithData:(id)data{
-   return [[self class] dataAdapterWithCellReuseIdentifier:nil data:data cellHeight:0 type:0];
+//   return [[self class] dataAdapterWithCellReuseIdentifier:nil data:data cellHeight:0 type:0];
+    return [[self class]dataAdapterWithCellReuseIdentifier:nil data:data cellHeight:0 type:0];
 }
 
 @end

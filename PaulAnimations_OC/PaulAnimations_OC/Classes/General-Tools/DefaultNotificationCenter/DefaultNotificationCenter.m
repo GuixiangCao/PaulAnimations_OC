@@ -43,20 +43,35 @@
 
 +(instancetype)defaultNotificationCenterWidthDelegate:(id<DefaultNotificationCenterDelegate>)delegate addNotificationNames:(void (^)(NSMutableArray<NSString *> *))addNamesBlock{
     
-    NSMutableArray *arr = nil;
+//    NSMutableArray *arr = nil;
+//
+//    DefaultNotificationCenter *notiCenter = [[self class] new];
+//    notiCenter.delegate                   = delegate;
+//
+//    if (addNamesBlock) {
+//        arr = [NSMutableArray array];
+//        addNamesBlock(arr);
+//    }
+//    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        [notiCenter addNotification:obj];
+//    }];
+//
+//    return notiCenter;
+    NSMutableArray *array = nil;
     
-    DefaultNotificationCenter *notiCenter = [[self class] new];
-    notiCenter.delegate                   = delegate;
+    DefaultNotificationCenter *center = [[self class] new];
+    center.delegate                   = delegate;
     
     if (addNamesBlock) {
-        arr = [NSMutableArray array];
-        addNamesBlock(arr);
+        array = [NSMutableArray array];
+        addNamesBlock(array);
     }
-    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [notiCenter addNotification:obj];
+    
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [center addNotification:obj];
     }];
     
-    return notiCenter;
+    return center;
 }
 
 -(void)addNotification:(NSString *)name{

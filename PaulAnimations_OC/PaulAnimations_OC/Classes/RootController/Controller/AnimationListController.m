@@ -54,8 +54,10 @@
 }
 
 -(void)configureNotification{
+
     self.notificationCenter = [DefaultNotificationCenter defaultNotificationCenterWidthDelegate:self addNotificationNames:^(NSMutableArray<NSString *> *names) {
         [names addObject:NotificationEvent.ShowHomePageTableView];
+
     }];
 }
 
